@@ -1,0 +1,75 @@
+{
+  "name": "bch-message-lib",
+  "version": "2.0.0",
+  "description": "An npm library for processing messages on the Bitcoin Cash blockchain using bch-js.",
+  "main": "dist/bch-message-lib.min.js",
+  "scripts": {
+    "start": "node index.js",
+    "test": "TEST=unit nyc mocha --require debugging-aid/network --timeout 25000 test/unit/",
+    "test:integration": "mocha --timeout 25000 test/integration/",
+    "test:temp": "mocha --timeout 25000 -g '#findTokenParent' test/unit/",
+    "lint": "standard --env mocha --fix",
+    "docs": "./node_modules/.bin/apidoc -i src/ -o docs",
+    "coverage": "nyc report --reporter=text-lcov | coveralls",
+    "coverage:report": "nyc --reporter=html mocha test/unit/ --exit",
+    "build": "browserify index.js -p tinyify --s BchMessage -o dist/bch-message-lib.min.js"
+  },
+  "keywords": [
+    "bitcoin",
+    "bitcoin cash",
+    "wallet",
+    "javascript",
+    "cryptocurrency",
+    "react",
+    "front end",
+    "client",
+    "apidoc",
+    "slp",
+    "tokens"
+  ],
+  "author": "Chris Troutner <chris.troutner@gmail.com>",
+  "license": "MIT",
+  "apidoc": {
+    "title": "bch-message-lib",
+    "url": "localhost:5000"
+  },
+  "repository": "Permissionless-Software-Foundation/bch-message-lib",
+  "devDependencies": {
+    "@psf/bch-js": "6.2.1",
+    "apidoc": "0.25.0",
+    "browserify": "17.0.0",
+    "chai": "4.1.2",
+    "coveralls": "3.0.2",
+    "debugging-aid": "0.5.3",
+    "eslint": "7.17.0",
+    "eslint-config-prettier": "7.1.0",
+    "eslint-config-standard": "16.0.2",
+    "eslint-plugin-node": "11.1.0",
+    "eslint-plugin-prettier": "3.3.1",
+    "eslint-plugin-standard": "4.0.0",
+    "husky": "4.3.0",
+    "lodash.clonedeep": "4.5.0",
+    "mocha": "7.0.1",
+    "nyc": "15.0.0",
+    "semantic-release": "17.4.3",
+    "sinon": "9.0.2",
+    "standard": "14.3.1",
+    "tinyify": "3.0.0"
+  },
+  "release": {
+    "publish": [
+      {
+        "path": "@semantic-release/npm",
+        "npmPublish": true
+      }
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run build"
+    }
+  },
+  "peerDependencies": {
+    "minimal-slp-wallet": "4.x"
+  }
+}
