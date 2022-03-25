@@ -1,3 +1,9 @@
+# bch-merit-lib
+
+This library needs to be setup. It was just forked from bch-message-lib.
+
+-----
+
 # bch-message-lib
 
 An npm library for processing messages on the Bitcoin Cash blockchain. This package depends on [minimal-slp-wallet](https://www.npmjs.com/package/minimal-slp-wallet).

@@ -1,8 +1,8 @@
 {
-  "name": "bch-message-lib",
+  "name": "bch-merit-lib",
   "version": "2.0.0",
-  "description": "An npm library for processing messages on the Bitcoin Cash blockchain using bch-js.",
-  "main": "dist/bch-message-lib.min.js",
+  "description": "A JS library for calculating token merit on the Bitcoin Cash blockchain using bch-js.",
+  "main": "dist/bch-merit-lib.min.js",
   "scripts": {
     "start": "node index.js",
     "test": "TEST=unit nyc mocha --require debugging-aid/network --timeout 25000 test/unit/",
@@ -12,7 +12,7 @@
     "docs": "./node_modules/.bin/apidoc -i src/ -o docs",
     "coverage": "nyc report --reporter=text-lcov | coveralls",
     "coverage:report": "nyc --reporter=html mocha test/unit/ --exit",
-    "build": "browserify index.js -p tinyify --s BchMessage -o dist/bch-message-lib.min.js"
+    "build": "browserify index.js -p tinyify --s BchMessage -o dist/bch-merit-lib.min.js"
   },
   "keywords": [
     "bitcoin",
@@ -30,10 +30,10 @@
   "author": "Chris Troutner <chris.troutner@gmail.com>",
   "license": "MIT",
   "apidoc": {
-    "title": "bch-message-lib",
+    "title": "bch-merit-lib",
     "url": "localhost:5000"
   },
-  "repository": "Permissionless-Software-Foundation/bch-message-lib",
+  "repository": "Permissionless-Software-Foundation/bch-merit-lib",
   "devDependencies": {
     "@psf/bch-js": "6.2.1",
     "apidoc": "0.25.0",
@@ -70,6 +70,10 @@
     }
   },
   "peerDependencies": {
+<<<<<<< HEAD
     "minimal-slp-wallet": "4.x"
+=======
+    "minimal-slp-wallet": "4.4.1"
+>>>>>>> 9f2fb1f2151115b07162208ae04b5ceefd6ddf7d
   }
 }
