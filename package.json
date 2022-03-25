@@ -1,6 +1,6 @@
 {
   "name": "bch-merit-lib",
-  "version": "2.0.0",
+  "version": "1.0.0",
   "description": "A JS library for calculating token merit on the Bitcoin Cash blockchain using bch-js.",
   "main": "dist/bch-merit-lib.min.js",
   "scripts": {
