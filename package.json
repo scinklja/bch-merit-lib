@@ -35,7 +35,7 @@
   },
   "repository": "Permissionless-Software-Foundation/bch-merit-lib",
   "devDependencies": {
-    "@psf/bch-js": "6.2.1",
+    "@psf/bch-js": "6.4.1",
     "apidoc": "0.25.0",
     "browserify": "17.0.0",
     "chai": "4.1.2",
@@ -70,10 +70,6 @@
     }
   },
   "peerDependencies": {
-<<<<<<< HEAD
-    "minimal-slp-wallet": "4.x"
-=======
-    "minimal-slp-wallet": "4.4.1"
->>>>>>> 9f2fb1f2151115b07162208ae04b5ceefd6ddf7d
+    "minimal-slp-wallet": ">= 4.x"
   }
 }
