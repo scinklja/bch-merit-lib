@@ -2,6 +2,8 @@
 
 This library needs to be setup. It was just forked from bch-message-lib.
 
+Note: This library behaves differently when using the 'rest-api' (bch-api, bch-js, fullstack.cash) interface vs the 'consumer-api' (web3, free-bch.fullstack.cash). The reason is that the rest-api interface will work with the complete transaction history of an address, whereas the consumer-api interface will clip transaction history at 100 entries. If the merit calculation expands more than 100 tx entries in the addresses history, then older parents won't be counted.
+
 -----
 
 # bch-message-lib
