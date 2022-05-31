@@ -72,7 +72,7 @@ const mockHydratedUtxos = {
   ]
 }
 
-const mockTokenUtxos = [
+const mockTokenUtxosOld = [
   {
     height: 656881,
     tx_hash: '7b0813748b9861b0487bae20568d9fde4691f92c1b8c2db944d6a2186d7394b1',
@@ -132,6 +132,30 @@ const mockTokenUtxos = [
     tokenType: 1,
     tokenQty: 2.12345678,
     isValid: true
+  }
+]
+
+const mockTokenUtxos = [
+  {
+    height: 665504,
+    tx_hash: '9cecf752a27876a6a26def4ed944799f31bb991df30080a62251de06a68b7392',
+    tx_pos: 1,
+    value: 546,
+    txid: '9cecf752a27876a6a26def4ed944799f31bb991df30080a62251de06a68b7392',
+    vout: 1,
+    isSlp: true,
+    type: 'token',
+    qty: '100000000',
+    tokenId: '38e97c5d7d3585a2cbf3f9580c82ca33985f9cb0845d4dcce220cb709f9538b0',
+    address: 'bitcoincash:qrrh8reyhqgrw0ly884snn4llxgs44lkfcnlph2rwf',
+    tokenType: 1,
+    ticker: 'PSF',
+    name: 'Permissionless Software Foundation',
+    documentUri: 'psfoundation.cash',
+    documentHash: '',
+    decimals: 8,
+    qtyStr: '1',
+    tokenQty: '1'
   }
 ]
 
@@ -242,23 +266,20 @@ const mockTxInputs = {
   vout: []
 }
 
-const mockTxHistory = {
-  success: true,
-  transactions: [
-    {
-      height: 664946,
-      tx_hash: 'b7b28a03575bae28c421306fe6727d26c8a6c109b03dfdd276e7bfe32d83e850'
-    },
-    {
-      height: 665022,
-      tx_hash: '01ea002c96b76fb8ac7646aaa70af8684813e3b48baa8de6c68dcb2a6407027c'
-    },
-    {
-      height: 665023,
-      tx_hash: '91bc75f2c39c57e3fb0a6c1a07632220ef5fe04095f68e8a2719665d41fc645f'
-    }
-  ]
-}
+const mockTxHistory = [
+  {
+    height: 664946,
+    tx_hash: 'b7b28a03575bae28c421306fe6727d26c8a6c109b03dfdd276e7bfe32d83e850'
+  },
+  {
+    height: 665022,
+    tx_hash: '01ea002c96b76fb8ac7646aaa70af8684813e3b48baa8de6c68dcb2a6407027c'
+  },
+  {
+    height: 665023,
+    tx_hash: '91bc75f2c39c57e3fb0a6c1a07632220ef5fe04095f68e8a2719665d41fc645f'
+  }
+]
 
 const mockParentUtxo1 = {
   slpUtxos: [
@@ -306,6 +327,23 @@ const mockParentUtxo2 = {
   isValid: true
 }
 
+const mockParentTx03 = [
+  {
+    txid: 'b7b28a03575bae28c421306fe6727d26c8a6c109b03dfdd276e7bfe32d83e850',
+    hash: 'b7b28a03575bae28c421306fe6727d26c8a6c109b03dfdd276e7bfe32d83e850',
+    version: 2,
+    size: 662,
+    locktime: 0,
+    isValidSlp: true
+  }
+]
+
+const mockParentUtxo04 = {
+  height: 665153,
+  tx_hash: '5ed4f4d8a02693048975a98c59c7b8b04b2c0656b080595826f043728df46edc',
+  tx_pos: 1
+}
+
 const mockGetUtxos = {
   address: 'bitcoincash:qz9l5w0fvp670a8r48apsv0xqek840320cf5czgcmk',
   bchUtxos: [],
@@ -351,11 +389,14 @@ const mockGetUtxos = {
 module.exports = {
   mockUtxos,
   mockHydratedUtxos,
+  mockTokenUtxosOld,
   mockTokenUtxos,
   meritHydratedUtxos,
   mockTxInputs,
   mockTxHistory,
   mockParentUtxo1,
   mockParentUtxo2,
+  mockParentTx03,
+  mockParentUtxo04,
   mockGetUtxos
 }
