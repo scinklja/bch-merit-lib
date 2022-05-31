@@ -206,25 +206,25 @@ describe('#merit.js', () => {
     //   assert.equal(parentUtxo.isValid, true)
     // })
 
-    // it('should handle errors', async () => {
-    //   try {
-    //     // Force an error.
-    //     sandbox
-    //       .stub(uut.bchjs.RawTransactions, 'getRawTransaction')
-    //       .rejects(new Error('test error'))
-    //
-    //     const addr = 'bitcoincash:qzjgc7cz99hyh98yp4y6z5j40uwnd78fw5lx2m4k9t'
-    //     const txid =
-    //       '548198c66640b14c4c175ba5f88d73c63b00f65bc3adc3ea2e94fc41919c6c75'
-    //
-    //     await uut.findTokenParent(txid, addr)
-    //
-    //     assert.fail('Unexpected result')
-    //   } catch (err) {
-    //     // console.log(err)
-    //     assert.include(err.message, 'test error')
-    //   }
-    // })
+    it('should handle errors', async () => {
+      try {
+        // Force an error.
+        sandbox
+          .stub(uut.wallet, 'getTxData')
+          .rejects(new Error('test error'))
+
+        const addr = 'bitcoincash:qzjgc7cz99hyh98yp4y6z5j40uwnd78fw5lx2m4k9t'
+        const txid =
+          '548198c66640b14c4c175ba5f88d73c63b00f65bc3adc3ea2e94fc41919c6c75'
+
+        await uut.findTokenParent(txid, addr)
+
+        assert.fail('Unexpected result')
+      } catch (err) {
+        // console.log(err)
+        assert.include(err.message, 'test error')
+      }
+    })
   })
 
   describe('#getParentAge', () => {
