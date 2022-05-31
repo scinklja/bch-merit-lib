@@ -306,6 +306,48 @@ const mockParentUtxo2 = {
   isValid: true
 }
 
+const mockGetUtxos = {
+  address: 'bitcoincash:qz9l5w0fvp670a8r48apsv0xqek840320cf5czgcmk',
+  bchUtxos: [],
+  slpUtxos: {
+    type1: {
+      tokens: [
+        {
+          height: 665504,
+          tx_hash: 'dbb5aea45b20f3fed6537f0de746462c09992f47c11d525946a2b7378a599139',
+          tx_pos: 1,
+          value: 546,
+          txid: 'dbb5aea45b20f3fed6537f0de746462c09992f47c11d525946a2b7378a599139',
+          vout: 1,
+          isSlp: true,
+          type: 'token',
+          qty: '100000000',
+          tokenId: '38e97c5d7d3585a2cbf3f9580c82ca33985f9cb0845d4dcce220cb709f9538b0',
+          address: 'bitcoincash:qz9l5w0fvp670a8r48apsv0xqek840320cf5czgcmk',
+          tokenType: 1,
+          ticker: 'PSF',
+          name: 'Permissionless Software Foundation',
+          documentUri: 'psfoundation.cash',
+          documentHash: '',
+          decimals: 8,
+          qtyStr: '1',
+          tokenQty: '1'
+        }
+      ],
+      mintBatons: []
+    },
+    group: {
+      tokens: [],
+      mintBatons: []
+    },
+    nft: {
+      tokens: []
+    }
+  },
+  nullUtxos: [],
+  status: 200
+}
+
 module.exports = {
   mockUtxos,
   mockHydratedUtxos,
@@ -314,5 +356,6 @@ module.exports = {
   mockTxInputs,
   mockTxHistory,
   mockParentUtxo1,
-  mockParentUtxo2
+  mockParentUtxo2,
+  mockGetUtxos
 }

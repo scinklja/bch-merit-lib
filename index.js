@@ -7,11 +7,11 @@
 
 'use strict'
 
-const MemoLib = require('./lib/memo')
+// const MemoLib = require('./lib/memo')
 
-// const MeritLib = require('./lib/merit')
+const MeritLib = require('./lib/merit')
 
-class BchMessage {
+class BchMerit {
   constructor (config = {}) {
     if (!config.wallet) {
       throw new Error(
@@ -20,9 +20,9 @@ class BchMessage {
     }
     this.wallet = config.wallet
 
-    this.memo = new MemoLib(config)
-    // this.merit = new MeritLib(config)
+    // this.memo = new MemoLib(config)
+    this.merit = new MeritLib(config)
   }
 }
 
-module.exports = BchMessage
+module.exports = BchMerit
