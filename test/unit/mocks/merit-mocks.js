@@ -338,6 +338,12 @@ const mockParentTx03 = [
   }
 ]
 
+const mockParentUtxo04 = {
+  height: 665153,
+  tx_hash: '5ed4f4d8a02693048975a98c59c7b8b04b2c0656b080595826f043728df46edc',
+  tx_pos: 1
+}
+
 const mockGetUtxos = {
   address: 'bitcoincash:qz9l5w0fvp670a8r48apsv0xqek840320cf5czgcmk',
   bchUtxos: [],
@@ -391,5 +397,6 @@ module.exports = {
   mockParentUtxo1,
   mockParentUtxo2,
   mockParentTx03,
+  mockParentUtxo04,
   mockGetUtxos
 }
